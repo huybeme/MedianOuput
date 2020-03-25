@@ -3,6 +3,14 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.*;
 
+/**
+ * A class for reading a series of numbers from a text file and output the
+ *      median into a separate text file
+ *
+ * Completed by: Huy Le, Michael McTague, and Maria Pires
+ *      date: 03/24/2020
+ */
+
 public class Main {
 
     public static void main(String[] args) throws IOException {
