@@ -46,7 +46,6 @@ public class Main {
 
         // sorts array in ascending order
         selectionSort(sortArray);
-        double median;
 
         System.out.println("This is the sorted array list using selection sort: ");
         for (int i = 0; i < sortArray.length; i++) {
@@ -54,32 +53,29 @@ public class Main {
         }
         System.out.println();
 
-        if (sortArray.length % 2 == 0) {
+        //System.out.println(ArrayLab6);                                    // *side note* ArrayList has built-in toString method for printing
+
+        outputFile.println("The median of the array list is: " + getMedian(sortArray));   // determine the median print into a file,
+
+        outputFile.close();                                                 // close file
+
+    }
+
+    public static double getMedian(double[] array) {
+        if (array.length % 2 == 0) {
             // if the length of array is even
             //      for even number of an array, the median will be the average of the two medians
             //      the array length divided 2 will be the element of the second median therefore
             //      we also need to get the element before the second median as well for the calculation
-            median = (sortArray[sortArray.length / 2] + sortArray[(sortArray.length / 2) - 1]) / 2;
+            return (array[array.length / 2] + array[(array.length / 2) - 1]) / 2;
         }
         else {
             // else the length of array is odd
             //      the length of an array will be an integer and an integer divided by an integer
             //      will be an integer therefore no rounding will occur, this calculations allows to get
             //      the middle index
-            median = sortArray[sortArray.length / 2];
-        }
-
-        //System.out.println(ArrayLab6);                                    // *side note* ArrayList has built-in toString method for printing
-
-        outputFile.println("The median of the array list is: " + median);   // determine the median print into a file,
-
-        outputFile.close();                                                 // close file
-
-    }
-
-    public static double arrayMedian() {
-        double median = 0;
-        return median;
+            return array[array.length / 2];
+            }
     }
 
     // selection sort for double array data type
