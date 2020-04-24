@@ -89,33 +89,53 @@ public class Main {
     // selection sort for double array data type
     public static void selectionSort(double[] array) {
         double minValue;
+
+        /*
+        The below cycle repeats the swapping until all the numbers are in the right location,
+        for, instance, when the minimum value is placed at position 0, the cycle starts again at position 1 and follows the same logic.
+         */
         int minIndex, startScan, index;
         for (startScan = 0; startScan < (array.length -1); startScan++) {
+
+            //sets the initial position at 0 and attributes the initial minimum value to the one at that position
             minIndex = startScan;
             minValue = array[startScan];
+
+            //searches for the minimum value in the array
             for (index = startScan + 1; index < array.length; index++) {
                 if (array[index] < minValue) {
                     minValue = array[index];
                     minIndex = index;
                 }
             }
+
+            // if minimum value has been found, swap it with element at position 0
             array[minIndex] = array[startScan];
             array[startScan] = minValue;
         }
     }
 
-    // selection ort for integer array data type
+    // selection sort for integer array data type
     public static void selectionSort(int[] array) {
         int minIndex, startScan, index, minValue;
+
+        /*
+        The below cycle repeats the swapping until all the numbers are in the right location,
+        for, instance, when the minimum value is placed at position 0, the cycle starts again at position 1 and follows the same logic.
+         */
         for (startScan = 0; startScan < (array.length -1); startScan++) {
+            //sets the initial position at 0 and attributes the initial minimum value to the one at that position
             minIndex = startScan;
             minValue = array[startScan];
+
+            //searches for the minimum value in the array
             for (index = startScan + 1; index < array.length; index++) {
                 if (array[startScan] < minValue) {
                     minValue = array[index];
                     minIndex = index;
                 }
             }
+            // if minimum value has been found, swap it with element at position 0
             array[minIndex] = array[startScan];
             array[startScan] = minValue;
         }
