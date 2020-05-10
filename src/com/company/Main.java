@@ -24,18 +24,11 @@ public class Main {
         // FileWriter allows to write output into a file; false overwrites file instead of appending to file
         FileWriter fw = new FileWriter("MedianLab6", false);
         PrintWriter outputFile = new PrintWriter(fw);
-
-        boolean loopBreaker = true;
+        
         ArrayList<Double> ArrayLab6 = new ArrayList<Double>();      // array list of undefined size of type double
 
-        while (loopBreaker) {
-            String readLine = inputFile.nextLine();                 // read each line in file as String
-            double stringToDouble = Double.parseDouble(readLine);   // convert string into double
-            ArrayLab6.add(stringToDouble);                          // add double into array list
-
-            if (!inputFile.hasNext()) {                             // if end of file is reached, break loop
-                loopBreaker = false;
-            }
+        while (inputFile.hasNext()) {
+            ArrayLab6.add(Double.parseDouble(inputFile.nextLine()));                          // add double into array list
         }
 
         System.out.println("This is the unsorted array list: ");
